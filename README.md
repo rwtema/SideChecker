@@ -8,6 +8,8 @@ Note: This is meant to only be used in an deobfuscated enviroment.
 
 Installation
 ==============
+Please note that this is for mod developers only, and is of no use to regular players.
+
 Download the latest compiled jar (<a href="http://www.mediafire.com/download/2yeqy4fsvualbpa/SideChecker-1.0.jar">here</a>) and add it to your run directory /mods/ folder.
 
 
