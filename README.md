@@ -6,6 +6,10 @@ A coremod designed to check classes as they are loading and ensure that any code
 
 Note: This is meant to only be used in an deobfuscated enviroment.
 
+Installation
+==============
+Download the latest compiled jar (<a href="http://www.mediafire.com/download/2yeqy4fsvualbpa/SideChecker-1.0.jar">here</a>) and add it to your run directory /mods/ folder.
+
 
 Options
 ==============
