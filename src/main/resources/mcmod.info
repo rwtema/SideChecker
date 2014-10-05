@@ -1,0 +1,14 @@
+[{
+  "modid": "sidechecker",
+  "name": "SideChecker",
+  "description": "CoreMod to check if client-side code is called from non-client-side methods.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["RWTema"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}]
