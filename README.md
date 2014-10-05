@@ -8,6 +8,7 @@ Note: This is meant to only be used in an deobfuscated enviroment.
 
 
 Options
+==============
 Add the following VM options to configure the coreMods behaviour
 
 -DSideChecker.filter=%package name%<br>
