@@ -33,7 +33,7 @@ public class SideCheckerTransformer implements IClassTransformer {
 
     public static LaunchClassLoader classLoader = (LaunchClassLoader) SideCheckerTransformer.class.getClassLoader();
 
-    private static String clientSafeName = Type.getDescriptor(ClientSafe.class);
+    private static String clientSafeName = null;
     private static boolean crashOnSeriousError = false;
     private static boolean crashOnWarning = false;
 
@@ -41,7 +41,7 @@ public class SideCheckerTransformer implements IClassTransformer {
     private static final List<String> warnings = new ArrayList<String>();
     private static final List<String> errors = new ArrayList<String>();
 
-    public static String filter = null; // allow user to set this somewhere (maybe from a program argument?)
+    public static String filter = null;
 
     public static void init() {
         if (!isDevEnviroment())
