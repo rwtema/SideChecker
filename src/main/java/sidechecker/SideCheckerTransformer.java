@@ -90,21 +90,26 @@ public class SideCheckerTransformer implements IClassTransformer {
 
     @Override
     public byte[] transform(String s, String s2, byte[] bytes) {
+        CheckClassForProperSiding(s, s2, bytes);
+        return bytes;
+    }
+
+    public void CheckClassForProperSiding(String s, String s2, byte[] bytes) {
         if (needsInit) {
             init();
         }
 
         if (s == null || bytes == null) //should never happen
-            return null;
+            return;
 
         for (String exception : exceptions) {
             if (s.startsWith(exception))
-                return bytes;
+                return;
         }
 
         if (filter != null) {
             if (!s.startsWith(filter)) // basic hack to allow users to filter out other mods
-                return bytes;
+                return;
         } else {
             boolean flag = false;   // is the class from a 'directory' class
             final String replace = s.replace('.', '\\') + ".class";
@@ -117,7 +122,7 @@ public class SideCheckerTransformer implements IClassTransformer {
             }
 
             if (!flag)
-                return bytes;
+                return;
         }
 
 
@@ -133,7 +138,18 @@ public class SideCheckerTransformer implements IClassTransformer {
         ClassInfo.registerClass(s, bytes);
 
         if (hasClientAnnotation(classNode.visibleAnnotations))
-            return bytes;  // class is client-side and has a license to be so
+            return;  // class is client-side and has a license to be so
+
+        // inner class handling
+        if (classNode.outerClass != null) {
+            if (classNode.outerMethod != null && classNode.outerMethodDesc != null) {
+                if (ClassInfo.hasClientMethod(classNode.outerClass, classNode.outerMethod, classNode.outerMethodDesc))
+                    return;
+            } else if (ClassInfo.isClientClass(classNode.outerClass)) {
+                return;
+            }
+        }
+
 
         if (classNode.superName != null && ClassInfo.isClientClass(classNode.superName)) {
             logger.info("----------------------------------------------------------------");
@@ -143,7 +159,7 @@ public class SideCheckerTransformer implements IClassTransformer {
             if (crashOnSeriousError)
                 throwException();
 
-            return bytes;
+            return;
         }
 
         for (String interfaces : classNode.interfaces) {
@@ -155,7 +171,7 @@ public class SideCheckerTransformer implements IClassTransformer {
                 if (crashOnSeriousError)
                     throwException();
 
-                return bytes;
+                return;
             }
         }
 
@@ -218,8 +234,6 @@ public class SideCheckerTransformer implements IClassTransformer {
 
         if (crash)
             throwException();
-
-        return bytes;
     }
 
     private static void throwException() {
