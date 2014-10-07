@@ -10,8 +10,12 @@ Installation
 ==============
 Please note that this is for mod developers only, and is of no use to regular players.
 
-Download the latest compiled jar (<a href="http://www.mediafire.com/download/2yeqy4fsvualbpa/SideChecker-1.0.jar">here</a>) and add it to your run directory /mods/ folder.
+Download the latest compiled jar and add it to your run directory /mods/ folder.
 
+Downloads
+==============
+<a href="http://www.mediafire.com/download/mn5qs3pz195pgl4/SideChecker-1.1.jar">Version 1.1</a>
+<a href="http://www.mediafire.com/download/2yeqy4fsvualbpa/SideChecker-1.0.jar">Version 1.0</a>
 
 Options
 ==============
