@@ -14,8 +14,8 @@ Download the latest compiled jar and add it to your run directory /mods/ folder.
 
 Downloads
 ==============
-<a href="http://www.mediafire.com/download/mn5qs3pz195pgl4/SideChecker-1.1.jar">Version 1.1</a>
-<a href="http://www.mediafire.com/download/2yeqy4fsvualbpa/SideChecker-1.0.jar">Version 1.0</a>
+<a href="http://www.mediafire.com/download/mn5qs3pz195pgl4/SideChecker-1.1.jar">Version 1.1</a><br>
+<a href="http://www.mediafire.com/download/2yeqy4fsvualbpa/SideChecker-1.0.jar">Version 1.0</a><br>
 
 Options
 ==============
