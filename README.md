@@ -1,7 +1,7 @@
 SideChecker
 ======
 
-A coremod designed to check classes as they are loading and ensure that any code that calls a client-side code (i.e. code that is marked with @SideOnly(Side.CLIENT and therefore not present in a server enviroment) is also marked with @SideOnly(Side.CLIENT).
+A coremod designed to check classes as they are loading and ensure that any code that calls a client-side code (i.e. code that is marked with @SideOnly(Side.CLIENT) and therefore not present in a server enviroment) is also marked with @SideOnly(Side.CLIENT).
 
 
 Note: This is meant to only be used in an deobfuscated enviroment.
